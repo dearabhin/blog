@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Read latest post
-      link: /posts/hello-world
+      link: /posts/neurotech
     - theme: alt
       text: View on GitHub
       link: https://github.com/dearabhin
@@ -22,5 +22,9 @@ hero:
   <a href="/blog/posts/neurotech" class="card">
     <h3>Computational Neuroscience</h3>
     <p>Researching neural signal decoding, EEG analysis, and Brain-Computer Interfaces.</p>
+  </a>
+  <a href="/blog/posts/startup-journey" class="card">
+    <h3>Startups & Hardware</h3>
+    <p>Documenting the process of building scalable services and wearable tech from scratch.</p>
   </a>
 </div>
