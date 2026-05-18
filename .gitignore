@@ -16,7 +16,6 @@ out/
 
 # Gatsby
 .cache/
-public/
 
 # Environment variables
 .env
