@@ -53,7 +53,7 @@ export default withMermaid(
       ],
       
       footer: {
-        message: 'Built with VitePress',
+        message: 'Built with Sting Energy Drink <img src="/blog/sting-energy.png" alt="Sting" style="height: 1.2em; display: inline-block; vertical-align: middle; margin-left: 4px; margin-bottom: 3px;" />',
         copyright: 'Copyright © 2026 Abhin Krishna'
       }
     },
