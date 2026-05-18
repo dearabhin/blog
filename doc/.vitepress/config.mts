@@ -4,8 +4,8 @@ export default defineConfig({
   title: "My Tech Blog",
   description: "Exploring code, systems, and engineering.",
   
-  // Important: If your repo name is 'my-blog', uncomment the line below:
-  // base: '/my-blog/', 
+
+  base: '/blog/', 
 
   themeConfig: {
     // Top Navigation Bar
