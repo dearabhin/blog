@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "My Tech Blog"
-  text: "Engineering, AI, and Systems"
-  tagline: Exploring ideas and building startups.
+  name: "Abhin Krishna"
+  text: "Engineering, AI & Neurotech"
+  tagline: "Exploring Brain-Computer Interfaces, LLMs, and building the future."
   actions:
     - theme: brand
       text: Read latest post
@@ -12,12 +12,15 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/dearabhin
-
-features:
-  - title: Brain Computer Interfaces
-    details: Deep dives into Neurotech, EEG, and neural signal decoding.
-  - title: AI & Machine Learning
-    details: Exploring LLMs, generative models, and GPU optimization.
-  - title: Startup Journey
-    details: Documenting the process of building products from scratch.
 ---
+
+<div class="card-grid">
+  <a href="/posts/ai-and-llms" class="card">
+    <h3>AI & Machine Learning</h3>
+    <p>Deep dives into generative models, GPU optimization, and large language models.</p>
+  </a>
+  <a href="/posts/neurotech" class="card">
+    <h3>Computational Neuroscience</h3>
+    <p>Researching neural signal decoding, EEG analysis, and Brain-Computer Interfaces.</p>
+  </a>
+</div>
