@@ -1,6 +1,7 @@
 ---
+title: "Abhin Krishna — Engineering, AI & Neurotech"
+description: "Exploring Brain-Computer Interfaces, LLMs, and building the future. A blog by Abhin Krishna."
 layout: home
-
 hero:
   name: "Abhin Krishna"
   text: "Engineering, AI & Neurotech"

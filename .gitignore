@@ -6,6 +6,8 @@ node_modules/
 # Testing
 coverage/
 
+Takeout/
+
 # Production
 build/
 dist/

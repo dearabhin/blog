@@ -4,7 +4,6 @@ description: "Exploring the intersection of electronics, biological systems, and
 date: 2026-05-19
 ---
 
-# Computational Neuroscience: Decoding Neural Signals and Building BCIs
 
 To me, the human brain is the ultimate engineering challenge. While a lot of my time is spent training neural networks on silicon GPUs, my true passion lies in understanding and interfacing with the biological neural networks inside our heads. 
 

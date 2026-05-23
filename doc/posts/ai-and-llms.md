@@ -4,7 +4,6 @@ description: "Exploring the intersection of neural networks, natural language pr
 date: 2026-05-19
 ---
 
-# AI & Machine Learning: Deep Dives into Generative Models, GPU Optimization, and LLMs
 
 When I first started diving into Artificial Intelligence, the field felt like an ocean of abstract math and massive compute clusters. But over the last year, my perspective has shifted entirely. AI isn't just about massive datacenters; it is about what you can build, optimize, and deploy right from your own machine. 
 

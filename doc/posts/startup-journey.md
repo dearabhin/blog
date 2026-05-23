@@ -4,7 +4,6 @@ description: "Documenting the transition from academic projects to building scal
 date: 2026-05-19
 ---
 
-# Startups & Hardware: Building Scalable Services and Wearable Tech from Scratch
 
 There is a massive difference between writing a script that works on your local machine and building a system that real people use. As I navigate my BTech in Electronics and Biomedical Engineering, my focus has increasingly shifted from purely academic research to the entrepreneurial side of engineering. 
 

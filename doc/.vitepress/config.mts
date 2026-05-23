@@ -1,21 +1,75 @@
 import { defineConfig } from "vitepress";
+import type { HeadConfig } from "vitepress";
 import { withMermaid } from "vitepress-plugin-mermaid";
 
 // Keeping the sleek orange vector logo that matches your style.css
 const brandLogo = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23D95C41" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12.1" y1="11.9" x2="18.9" y2="8.2" /><line x1="12.1" y1="12.1" x2="20.3" y2="12.9" /><line x1="12.2" y1="12.4" x2="16.6" y2="19.1" /><line x1="11.8" y1="12.4" x2="7.3" y2="19.2" /><line x1="11.9" y1="12.1" x2="3.7" y2="13.3" /><line x1="11.8" y1="11.7" x2="7.8" y2="4.4" /></svg>';
 
+const SITE_URL = 'https://dearabhin.github.io';
+const BASE_PATH = '/blog/';
+
 export default withMermaid(
   defineConfig({
     // Crucial for GitHub Pages hosting on a repo named "blog"
-    base: "/blog/",
+    base: BASE_PATH,
     
     title: "Abhin Krishna",
     description: "Exploring Brain-Computer Interfaces, LLMs, and building the future.",
     cleanUrls: true,
+
+    // Auto-generates sitemap.xml at build time
+    sitemap: {
+      hostname: SITE_URL
+    },
     
     head: [
-      ['link', { rel: 'icon', type: 'image/svg+xml', href: brandLogo }]
+      // Favicons
+      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blog/favicon.svg' }],
+      ['link', { rel: 'icon', type: 'image/x-icon', href: '/blog/favicon.ico' }],
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/blog/apple-touch-icon.png' }],
+
+      // OpenGraph global tags
+      ['meta', { property: 'og:type', content: 'website' }],
+      ['meta', { property: 'og:site_name', content: 'Abhin Krishna' }],
+      ['meta', { property: 'og:locale', content: 'en_US' }],
+      ['meta', { property: 'og:image', content: `${SITE_URL}/blog/og-image.png` }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '630' }],
+
+      // Twitter Card global tags
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:site', content: '@dearabhin' }],
+      ['meta', { name: 'twitter:creator', content: '@dearabhin' }],
+      ['meta', { name: 'twitter:image', content: `${SITE_URL}/blog/og-image.png` }],
     ],
+
+    // Dynamic per-page meta tags (og:title, og:description, og:url, canonical)
+    // transformHead runs during SSR so tags appear in the actual HTML source
+    transformHead({ pageData }) {
+      const canonicalUrl = `${SITE_URL}${BASE_PATH}${pageData.relativePath}`
+        .replace(/index\.md$/, '')
+        .replace(/\.md$/, '');
+
+      const head: HeadConfig[] = [
+        ['link', { rel: 'canonical', href: canonicalUrl }],
+        ['meta', { property: 'og:title', content: pageData.title || 'Abhin Krishna — Engineering, AI & Neurotech' }],
+        ['meta', { property: 'og:url', content: canonicalUrl }],
+      ];
+
+      if (pageData.description) {
+        head.push(['meta', { property: 'og:description', content: pageData.description }]);
+      }
+
+      // Mark posts as article type for richer search results
+      if (pageData.relativePath.startsWith('posts/')) {
+        head.push(['meta', { property: 'og:type', content: 'article' }]);
+        if (pageData.frontmatter?.date) {
+          head.push(['meta', { property: 'article:published_time', content: String(pageData.frontmatter.date) }]);
+        }
+      }
+
+      return head;
+    },
 
     themeConfig: {
       logo: brandLogo,
