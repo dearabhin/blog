@@ -16,15 +16,15 @@ hero:
 ---
 
 <div class="card-grid">
-  <a href="/blog/posts/ai-and-llms" class="card">
+  <a href="/posts/ai-and-llms" class="card">
     <h3>AI & Machine Learning</h3>
     <p>Deep dives into generative models, GPU optimization, and large language models.</p>
   </a>
-  <a href="/blog/posts/neurotech" class="card">
+  <a href="/posts/neurotech" class="card">
     <h3>Computational Neuroscience</h3>
     <p>Researching neural signal decoding, EEG analysis, and Brain-Computer Interfaces.</p>
   </a>
-  <a href="/blog/posts/startup-journey" class="card">
+  <a href="/posts/startup-journey" class="card">
     <h3>Startups & Hardware</h3>
     <p>Documenting the process of building scalable services and wearable tech from scratch.</p>
   </a>

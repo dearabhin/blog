@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dearabhin.github.io/blog/sitemap.xml
+Sitemap: https://blog.abhinkrishna.com/sitemap.xml

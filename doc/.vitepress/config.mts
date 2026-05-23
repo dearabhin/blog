@@ -5,12 +5,12 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 // Keeping the sleek orange vector logo that matches your style.css
 const brandLogo = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23D95C41" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12.1" y1="11.9" x2="18.9" y2="8.2" /><line x1="12.1" y1="12.1" x2="20.3" y2="12.9" /><line x1="12.2" y1="12.4" x2="16.6" y2="19.1" /><line x1="11.8" y1="12.4" x2="7.3" y2="19.2" /><line x1="11.9" y1="12.1" x2="3.7" y2="13.3" /><line x1="11.8" y1="11.7" x2="7.8" y2="4.4" /></svg>';
 
-const SITE_URL = 'https://dearabhin.github.io';
-const BASE_PATH = '/blog/';
+const SITE_URL = 'https://blog.abhinkrishna.com';
+const BASE_PATH = '/';
 
 export default withMermaid(
   defineConfig({
-    // Crucial for GitHub Pages hosting on a repo named "blog"
+    // Serve from the root of the custom domain
     base: BASE_PATH,
     
     title: "Abhin Krishna",
@@ -23,16 +23,27 @@ export default withMermaid(
     },
     
     head: [
+      // Google Analytics
+      ['script', { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-EE4E441Y4N' }],
+      [
+        'script',
+        {},
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EE4E441Y4N');`
+      ],
+
       // Favicons
-      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/blog/favicon.svg' }],
-      ['link', { rel: 'icon', type: 'image/x-icon', href: '/blog/favicon.ico' }],
-      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/blog/apple-touch-icon.png' }],
+      ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
 
       // OpenGraph global tags
       ['meta', { property: 'og:type', content: 'website' }],
       ['meta', { property: 'og:site_name', content: 'Abhin Krishna' }],
       ['meta', { property: 'og:locale', content: 'en_US' }],
-      ['meta', { property: 'og:image', content: `${SITE_URL}/blog/og-image.png` }],
+      ['meta', { property: 'og:image', content: `${SITE_URL}/og-image.png` }],
       ['meta', { property: 'og:image:width', content: '1200' }],
       ['meta', { property: 'og:image:height', content: '630' }],
 
@@ -40,7 +51,7 @@ export default withMermaid(
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:site', content: '@dearabhin' }],
       ['meta', { name: 'twitter:creator', content: '@dearabhin' }],
-      ['meta', { name: 'twitter:image', content: `${SITE_URL}/blog/og-image.png` }],
+      ['meta', { name: 'twitter:image', content: `${SITE_URL}/og-image.png` }],
     ],
 
     // Dynamic per-page meta tags (og:title, og:description, og:url, canonical)
@@ -107,7 +118,7 @@ export default withMermaid(
       ],
       
       footer: {
-        message: 'Built with Sting Energy Drink <img src="/blog/sting-energy.png" alt="Sting" style="height: 1.2em; display: inline-block; vertical-align: middle; margin-left: 4px; margin-bottom: 3px;" />',
+        message: 'Built with Sting Energy Drink <img src="/sting-energy.png" alt="Sting" style="height: 1.2em; display: inline-block; vertical-align: middle; margin-left: 4px; margin-bottom: 3px;" />',
         copyright: 'Copyright © 2026 Abhin Krishna'
       }
     },
